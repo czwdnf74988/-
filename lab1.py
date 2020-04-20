@@ -13,7 +13,7 @@ magic_data=pd.read_csv('magic04.txt')#读取数据
 magic_data .columns=['a','b','c','d','e','f','g','h','i','j','class']
 colNum=magic_data.shape
 print(colNum)#列数
-magic_data.drop(["class"],axis=1,inplace=True)
+# magic_data.drop(["class"],axis=1,inplace=True)
 # a=magic_data['a'].sum()/19020
 # b=magic_data['b'].sum()/19020
 # c=magic_data['c'].sum()/19020
@@ -25,28 +25,26 @@ magic_data.drop(["class"],axis=1,inplace=True)
 # i=magic_data['i'].sum()/19020
 # j=magic_data['j'].sum()/19020
 # print('均值向量:',a,b,c,d,e,f,g,h,i,j)
-#
+# #
 # aa=np.array([magic_data['a'],magic_data['b'],magic_data['c'],magic_data['d'],magic_data['e'],magic_data['f'],magic_data['g'],magic_data['h'],magic_data['i'],magic_data['j']])
 # bb=aa.T
-# cc=np.dot(aa,bb)/19019
-
+# cc=np.dot(aa,bb)/19020
+#
 # print('矩阵内积:',cc)
-print(magic_data.iloc[0])
+# print(magic_data.iloc[0])
+# a1={}
+# b1={}
+# c1={}
+# d1={}
+# for i in range(19019):
+#     a1=magic_data.iloc[i]
+#     b1=a1.T
+#     c1=np.outer(a1,b1)
+#     d1=+c1
+# print('矩阵外积:',d1/19019)
 
 
-a1={}
-b1={}
-c1={}
-d1={}
-for i in range(19018):
-    a1=magic_data.iloc[i]
-    b1=a1.T
-    c1=np.outer(a1,b1)
-    d1=+c1
-print('矩阵外积:',d1/19019)
-
-
-# # 取出iris数据中的第0列，即表示花萼长度
+# 取出iris数据中的第0列，即表示花萼长度
 # x = magic_data['a']  # x轴
 # y = magic_data['b']  # y轴   花萼宽度
 #
@@ -82,14 +80,14 @@ print('矩阵外积:',d1/19019)
 # #把x轴的主刻度设置为1的倍数
 # ax.yaxis.set_major_locator(y_major_locator)
 # #把y轴的主刻度设置为10的倍数
-# plt.xlim(0,130)
-# #把x轴的刻度范围设置为-0.5到11，因为0.5不满一个刻度间隔，所以数字不会显示出来，但是能看到一点空白
-# plt.ylim(0,110)
-# #把y轴的刻度范围设置为-5到110，同理，-5不会标出来，但是能看到一点空白
+# plt.xlim(0,400)
+# #把x轴的刻度范围设置为0到130
+# plt.ylim(0,300)
+# #把y轴的刻度范围设置为-5到110
 #
 # plt.show()
-cor1=magic_data['a'].corr(magic_data['b'])
-print('相关系数:',cor1)
+# cor1=magic_data['a'].corr(magic_data['b'])
+# print('相关系数:',cor1)
 
 sigma1=np.std(magic_data['a'])
 sigma2=np.std(magic_data['b'])
